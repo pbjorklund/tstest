@@ -1,0 +1,22 @@
+{
+  "name": "tstest",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-print": "^2.0.1",
+    "gulp-typescript": "^2.12.1",
+    "mocha": "^2.4.5",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "node": "0.0.0"
+  }
+}
