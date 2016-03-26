@@ -2,6 +2,9 @@ Random code snippets from learning typescript
 
 Get started
 ===========
-npm install
-typings i
-gulp watch
+
+```npm install``` - Should install all you need.
+
+```typings i``` - Get those type definitions
+
+```gulp watch``` - Now go code and the test suite will run for you
