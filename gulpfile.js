@@ -14,7 +14,7 @@ gulp.task('build', function() {
 
 gulp.task("test", ["build"], function () {
     return gulp.src("build/**/*.spec.js")
-        .pipe(mocha());
+        .pipe(mocha({ui: 'bdd', reporter: 'dot'}));
 });
 
 gulp.task("watch", function(){                                   
