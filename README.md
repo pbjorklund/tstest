@@ -7,4 +7,4 @@ Get started
 
 ```typings i``` - Get those type definitions
 
-```gulp watch``` - Now go code and the test suite will run for you
+```gulp watch --silent``` - Now go code and the test suite will run for you
