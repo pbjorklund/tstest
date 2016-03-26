@@ -7,7 +7,7 @@ import { Tester } from "./play";
 
 let assert = require('assert');
 
-describe('Calculator', () => {
+describe('Tester', () => {
     var sut: Tester;
 
     beforeEach(function() {
