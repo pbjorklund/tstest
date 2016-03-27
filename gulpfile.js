@@ -39,7 +39,7 @@ gulp.task('bundle', function() {
     var tsConfig = ts.createProject("tsconfig-browser.json");
 
     return gulp.src(['src/**/*.ts', '!src/**/*.spec.ts'])
-        .pipe(ts(tsBundleProject, {
+        .pipe(ts(tsConfig, {
             noImplicitAny: true
         }))
         .pipe(gulp.dest('server/scripts'));
