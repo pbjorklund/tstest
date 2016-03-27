@@ -14,6 +14,8 @@
     "gulp-print": "^2.0.1",
     "gulp-typescript": "^2.12.1",
     "mocha": "^2.4.5",
+    "tslint": "^3.6.0",
+    "typescript": "^1.8.9",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
