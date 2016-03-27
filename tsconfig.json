@@ -1,5 +1,8 @@
 {
     "compilerOptions": {
         "target": "es5"
-    }
+    },"exclude": [
+        "typings",
+        "node_modules"
+    ]
 }
