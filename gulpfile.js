@@ -40,7 +40,8 @@ gulp.task('bundle', function() {
 
     return gulp.src(['src/**/*.ts', '!src/**/*.spec.ts'])
         .pipe(ts(tsConfig, {
-            noImplicitAny: true
+            noImplicitAny: true,
+            noExternalResolve: false
         }))
         .pipe(gulp.dest('server/scripts'));
 });
@@ -54,7 +55,7 @@ gulp.task('sync', ['bundle'], function () {
         server: {
             baseDir: "./server",
             routes: {
-                "/server/scripts": "/scripts",
+                "/server/scripts": "scripts",
                 "/bower_components": "bower_components"
             }
         }
