@@ -1,15 +1,15 @@
-interface IAdditioner { (firstNum: number, secondNum: number): number };
-interface IStringBuilder { (fname: number, ...rest: number[]): string }
+interface Additioner { (firstNum: number, secondNum: number): number; };
+interface StringBuilder { (fname: number, ...rest: number[]): string; }
 interface GenericIdentityFunc<T> { (a: T): T }
 
 export class Tester {
-    buildNameFun: IStringBuilder = (firstName: number, ...restOfName: number[]) => {
+    buildNameFun: StringBuilder = (firstName: number, ...restOfName: number[]) => {
         return firstName + " " + restOfName.join("-");
     }
 
     funcTypeTest(x: number, y: number) {
 
-        let additioner: IAdditioner =
+        let additioner: Additioner =
             function(z: number, a: number): number {
                 return z + a;
             };
