@@ -6,6 +6,7 @@ var gulp = require("gulp"),
     browserSync = require('browser-sync').create(),
     webpack = require('gulp-webpack');
 
+// TEST
 gulp.task('build', function() {
     return gulp.src('src/**/*.ts')
         .pipe(ts({
@@ -14,6 +15,11 @@ gulp.task('build', function() {
         .pipe(gulp.dest('build'));
 });
 
+gulp.task("watch", function(){
+    gulp.watch(["./src/**/*.ts"], ["build", "test"]);
+});
+
+// LOCAL DEV
 gulp.task('bundle', function() {
     return gulp.src('src/**/*.ts')
         .pipe(ts({
@@ -26,10 +32,6 @@ gulp.task('bundle', function() {
 gulp.task("test", ["build"], function () {
     return gulp.src("build/**/*.spec.js")
         .pipe(mocha({ui: 'bdd', reporter: 'dot'}));
-});
-
-gulp.task("watch", function(){
-    gulp.watch(["./src/**/*.ts"], ["build", "test"]);
 });
 
 // NOTE: Wrap browserSync.reload in an anon func for it to
