@@ -12,5 +12,4 @@ let injectHtml = function(id: string, content: string) {
 }
 
 injectHtml("divOne", `<h1>${destOutput}</h1>`);
-injectHtml("divOne", `<h1>${playOutput}</h1>`);
-
+injectHtml("divOne", `<h2>${playOutput}</h2>`);

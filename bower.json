@@ -1,0 +1,21 @@
+{
+  "name": "tstest",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Patrik Björklund <patrik@cognit.se>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/pbjorklund/tstest",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "^2.2.0"
+  }
+}

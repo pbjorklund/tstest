@@ -25,13 +25,24 @@ gulp.task("test", ["build"], function () {
 });
 
 // LOCAL DEV
-gulp.task('bundle', function() {
-    return gulp.src('src/**/*.ts')
+//Webpack just for reference
+gulp.task('bundle-webpack', function() {
+    return gulp.src(['src/**/*.ts', '!src/**/*.spec.ts'])
         .pipe(ts({
             noImplicitAny: true
         }))
         .pipe(webpack( require('./webpack.config.js')))
         .pipe(gulp.dest('server'));
+});
+
+gulp.task('bundle', function() {
+    var tsConfig = ts.createProject("tsconfig-browser.json");
+
+    return gulp.src(['src/**/*.ts', '!src/**/*.spec.ts'])
+        .pipe(ts(tsBundleProject, {
+            noImplicitAny: true
+        }))
+        .pipe(gulp.dest('server/scripts'));
 });
 
 // NOTE: Wrap browserSync.reload in an anon func for it to
@@ -42,6 +53,10 @@ gulp.task('sync', ['bundle'], function () {
     browserSync.init({
         server: {
             baseDir: "./server",
+            routes: {
+                "/server/scripts": "/scripts",
+                "/bower_components": "bower_components"
+            }
         }
     });
 
