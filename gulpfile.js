@@ -26,7 +26,7 @@ gulp.task('bundle', function() {
             noImplicitAny: true
         }))
         .pipe(webpack( require('./webpack.config.js')))
-        .pipe(gulp.dest('build'));
+        .pipe(gulp.dest('server'));
 });
 
 gulp.task("test", ["build"], function () {
@@ -42,9 +42,6 @@ gulp.task('sync', ['bundle'], function () {
     browserSync.init({
         server: {
             baseDir: "./server",
-            routes: {
-                "/build": "build",
-            }
         }
     });
 

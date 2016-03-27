@@ -7,5 +7,10 @@ let destOutput = destructuring.getRepresentation();
 let play = new Tester();
 let playOutput = play.buildNameFun(2, 3, 3);
 
-document.getElementById("#divOne").innerHTML += `<h1>${destOutput}</h1>`;
-document.getElementById("#divOne").innerHTML += `<h1>${playOutput}</h1>`;
+let injectHtml = function(id: string, content: string) {
+    document.getElementById(`#${id}`).innerHTML += content;
+}
+
+injectHtml("divOne", `<h1>${destOutput}</h1>`);
+injectHtml("divOne", `<h1>${playOutput}</h1>`);
+
