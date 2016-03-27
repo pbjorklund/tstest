@@ -7,4 +7,7 @@ Get started
 
 ```typings i``` - Get those type definitions
 
-```gulp watch --silent``` - Now go code and the test suite will run for you
+Do stuff
+========
+```gulp watch --silent``` - Watch for changes, run test silent
+```gulp sync``` - serve server/index.html with browsersync which loads build/browser.js (from source/browser.ts)
