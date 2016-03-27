@@ -3,13 +3,23 @@ var gulp = require("gulp"),
     src = require("vinyl-source-stream"),
     mocha = require("gulp-mocha"),
     ts = require("gulp-typescript"),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    webpack = require('gulp-webpack');
 
 gulp.task('build', function() {
     return gulp.src('src/**/*.ts')
         .pipe(ts({
             noImplicitAny: true
         }))
+        .pipe(gulp.dest('build'));
+});
+
+gulp.task('bundle', function() {
+    return gulp.src('src/**/*.ts')
+        .pipe(ts({
+            noImplicitAny: true
+        }))
+        .pipe(webpack( require('./webpack.config.js')))
         .pipe(gulp.dest('build'));
 });
 
@@ -24,14 +34,14 @@ gulp.task("watch", function(){
 
 // NOTE: Wrap browserSync.reload in an anon func for it to
 //       not stop after the first trigger
-gulp.task('js-watch', ['build'], function() { browserSync.reload() });
+gulp.task('js-watch', ['bundle'], function() { browserSync.reload() });
 
-gulp.task('sync', ['build'], function () {
+gulp.task('sync', ['bundle'], function () {
     browserSync.init({
         server: {
             baseDir: "./server",
             routes: {
-                "/build": "build"
+                "/build": "build",
             }
         }
     });

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
   "author": "",
   "license": "ISC",
@@ -14,12 +14,15 @@
     "gulp-mocha": "^2.2.0",
     "gulp-print": "^2.0.1",
     "gulp-typescript": "^2.12.1",
+    "gulp-webpack": "^1.5.0",
     "mocha": "^2.4.5",
+    "ts-loader": "^0.8.1",
     "tslint": "^3.6.0",
     "typescript": "^1.8.9",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "node": "0.0.0"
+    "node": "0.0.0",
+    "webpack": "^1.12.14"
   }
 }
