@@ -19,6 +19,11 @@ gulp.task("watch", function(){
     gulp.watch(["./src/**/*.ts"], ["build", "test"]);
 });
 
+gulp.task("test", ["build"], function () {
+    return gulp.src("build/**/*.spec.js")
+        .pipe(mocha({ui: 'bdd', reporter: 'dot'}));
+});
+
 // LOCAL DEV
 gulp.task('bundle', function() {
     return gulp.src('src/**/*.ts')
@@ -27,11 +32,6 @@ gulp.task('bundle', function() {
         }))
         .pipe(webpack( require('./webpack.config.js')))
         .pipe(gulp.dest('server'));
-});
-
-gulp.task("test", ["build"], function () {
-    return gulp.src("build/**/*.spec.js")
-        .pipe(mocha({ui: 'bdd', reporter: 'dot'}));
 });
 
 // NOTE: Wrap browserSync.reload in an anon func for it to
