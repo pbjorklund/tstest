@@ -1,11 +1,11 @@
-interface Additioner { (firstNum: number, secondNum: number): number; };
+interface Additioner { (firstNum: number, secondNum: number): number; }
 interface StringBuilder { (fname: number, ...rest: number[]): string; }
-interface GenericIdentityFunc<T> { (a: T): T }
+interface GenericIdentityFunc<T> { (a: T): T; }
 
 export class Tester {
     buildNameFun: StringBuilder = (firstName: number, ...restOfName: number[]) => {
         return firstName + " " + restOfName.join("-");
-    }
+    };
 
     funcTypeTest(x: number, y: number) {
 
@@ -20,7 +20,7 @@ export class Tester {
             cb: (param1: number, param2: number) => number
         ) {
             return cb(num1, num2);
-        }
+        };
 
         return func(x, y, additioner);
     }

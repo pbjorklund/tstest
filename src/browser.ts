@@ -1,7 +1,7 @@
 import { Destructuring } from "./destructuring";
 import { Tester } from "./play";
 
-interface HtmlInjector { (id: string, content: string) : void; };
+interface HtmlInjector { (id: string, content: string) : void; }
 
 let destructuring = new Destructuring();
 let destOutput = destructuring.getRepresentation();
