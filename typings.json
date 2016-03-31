@@ -2,8 +2,9 @@
   "ambientDependencies": {
     "assert": "registry:dt/assert#0.0.0+20160317120654",
     "jquery": "registry:dt/jquery#1.10.0+20160316155526",
-    "mocha": "registry:dt/mocha#2.2.5+20160317120654",
-    "node": "registry:dt/node#4.0.0+20160319033040"
+    "mocha": "registry:dt/mocha#2.2.5+20160317120654"
   },
-  "dependencies": {}
+  "dependencies": {
+    "requirejs": "registry:npm/requirejs#2.2.0+20160319062357"
+  }
 }

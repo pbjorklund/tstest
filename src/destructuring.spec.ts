@@ -12,10 +12,16 @@ describe("", () => {
         sut = new Destructuring();
     });
 
-    describe("getRepresentation", () => {
+    describe("destructureObject", () => {
         it("should build a new string in format fName - city", () => {
-            let result = sut.getRepresentation();
+            let result = sut.destructureObject();
             assert.equal(result, "Patrik - Gothenburg");
+        });
+    });
+    describe("destructureArray", () => {
+        it("should build a new string in format first second fourth", () => {
+            let result = sut.destructureArray();
+            assert.equal(result, "1 2 4");
         });
     });
 });
