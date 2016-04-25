@@ -1,7 +1,7 @@
 /// <reference path="../typings/main.d.ts" />
 "use strict";
 
-import { Tester } from "./play";
+import { Tester, Locale } from "./play";
 
 let assert = require("assert");
 
@@ -23,6 +23,14 @@ describe("Tester", () => {
         it("should do something cool", () => {
             let result = sut.funcTypeTest(3, 1);
             assert.equal(4, result);
+        });
+    });
+
+    describe("enums", () => {
+        it("is interchangable with number", () => {
+            let result: number = sut.enumTakingFunc(Locale.AfrikaansSouthAfrica);
+            assert.equal(result, Locale.Finglish);
+            assert.equal(1337, Locale.Finglish);
         });
     });
 });
